@@ -24,17 +24,18 @@
 #include <vector>
 #include "include/Context.h"
 #include "include/preprocessing.h"
+#include "include/inputdevice.h"
 
 using namespace std;
 
-bool keys[1024];
+// bool keys[1024];
 
-GLint activeHuman = 0;
+// GLint activeHuman = 0;
 House *house=NULL;
 
 GLint PointShader;
 
-GLboolean isBeizer = GL_FALSE;
+// GLboolean isBeizer = GL_FALSE;
 
 // cube
 GLuint cubeVAO, cubeVBO;
@@ -43,39 +44,39 @@ GLuint cubeVAO, cubeVBO;
 GLuint lineVAO, lineVBO;
 
 // time between two frames
-GLfloat lastFrame = 0.0f;	// last frame time
+// GLfloat lastFrame = 0.0f;	// last frame time
 
 GLfloat lastX = 400, lastY = 300;
-GLfloat deltaTime = 0.0f;
+// GLfloat deltaTime = 0.0f;
 GLboolean firstMouse = true;
 glm::vec3 isLight = glm::vec3(3.0f);
 glm::vec3 isLight1 = glm::vec3(3.0f);
 
-vector<glm::vec3> pathlist;
+// vector<glm::vec3> pathlist;
 
 Camera camera(glm::vec3(0.0f, 33.0f, 70.0f));
 Mbox *mbox1 = NULL, *mbox2 = NULL;
 // human 1
-Humanoid *human = NULL;
-BodyParts *lArm = NULL;
-BodyParts *lHand = NULL;
-BodyParts *rArm = NULL;
-BodyParts *rHand = NULL;
-BodyParts *lThigh = NULL;
-BodyParts *lLeg = NULL;
-BodyParts *rThigh = NULL;
-BodyParts *rLeg = NULL;
+// Humanoid *human = NULL;
+// BodyParts *lArm = NULL;
+// BodyParts *lHand = NULL;
+// BodyParts *rArm = NULL;
+// BodyParts *rHand = NULL;
+// BodyParts *lThigh = NULL;
+// BodyParts *lLeg = NULL;
+// BodyParts *rThigh = NULL;
+// BodyParts *rLeg = NULL;
 
 // human 2
-Humanoid *human1 = NULL;
-BodyParts *lArm1 = NULL;
-BodyParts *lHand1 = NULL;
-BodyParts *rArm1 = NULL;
-BodyParts *rHand1 = NULL;
-BodyParts *lThigh1 = NULL;
-BodyParts *lLeg1 = NULL;
-BodyParts *rThigh1 = NULL;
-BodyParts *rLeg1 = NULL;
+// Humanoid *human1 = NULL;
+// BodyParts *lArm1 = NULL;
+// BodyParts *lHand1 = NULL;
+// BodyParts *rArm1 = NULL;
+// BodyParts *rHand1 = NULL;
+// BodyParts *lThigh1 = NULL;
+// BodyParts *lLeg1 = NULL;
+// BodyParts *rThigh1 = NULL;
+// BodyParts *rLeg1 = NULL;
 
 glm::mat4 projection = glm::mat4(1.0f);
 glm::mat4 view;// = glm::mat4(1.0f)
@@ -84,125 +85,6 @@ ofstream outfile;
 ifstream infile;
 
 GLboolean recordMode = false;
-
-void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode) {
-	if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
-		glfwSetWindowShouldClose(window, GL_TRUE);
-	// music box
-	if (key == GLFW_KEY_T && action == GLFW_PRESS)
-	{
-		mbox1->isOpen = GL_TRUE;
-		human->isshift = GL_TRUE;
-		human1->isshift = GL_TRUE;
-	}
-	if (key == GLFW_KEY_Y && action == GLFW_PRESS)
-	{
-		mbox1->isOpen = GL_FALSE;
-		human->isshift = GL_FALSE;
-		human1->isshift = GL_FALSE;
-	}
-	if (key == GLFW_KEY_O && action == GLFW_PRESS)
-	{
-		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-
-	}
-	if (key == GLFW_KEY_P && action == GLFW_PRESS)
-	{
-		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
-
-	}
-	if (key == GLFW_KEY_L && action == GLFW_PRESS)
-	{
-		isBeizer = !isBeizer;
-	}
-
-	if (key == GLFW_KEY_K && action == GLFW_PRESS)
-	{
-		int lights = 0, lamp = 0;
-		if(isLight.x>0.0f)
-			lights = 1;
-		if(isLight.y>0.0f)
-			lamp = 1;
-		cout <<lights<<" "<<lamp<<" "<<house->openWindow<<" "<<house->openDoor<<" "<<mbox1->openAngle<<" "<<human1->root->cen<<"\n";
-
-		outfile <<lights<<" "<<lamp<<" "<<house->openWindow<<" "<<house->openDoor<<" "<<mbox1->openAngle<<" "<<human1->root->cen<<"\n";
-	}
-	if (key == GLFW_KEY_J && action == GLFW_PRESS)
-	{
-		outfile.open ("keyframes.txt", ios::app);
-	}
-	if (key == GLFW_KEY_R && action == GLFW_PRESS)
-	{
-		recordMode = true;
-		infile.open("keyframes.txt");
-	}
-
-	// open and closing sliding door
-	if (key == GLFW_KEY_LEFT_CONTROL && action == GLFW_PRESS)
-		house->isOpen = GL_TRUE;
-	if (key == GLFW_KEY_RIGHT_CONTROL && action == GLFW_PRESS)
-		house->isOpen = GL_FALSE;
-	// open and close door
-	if (key == GLFW_KEY_LEFT_SHIFT && action == GLFW_PRESS)
-		house->isOpen1 = GL_TRUE;
-	if (key == GLFW_KEY_RIGHT_SHIFT && action == GLFW_PRESS)
-		house->isOpen1 = GL_FALSE;
-
-	// lights on/off
-	if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
-	{
-		if (isLight.x > 0.0f) isLight.x=0.0f;
-		else isLight.x = 3.0f;
-		// cout << glm::to_string(isLight) << endl;
-	}
-	if (key == GLFW_KEY_RIGHT_ALT && action == GLFW_PRESS)
-	{
-		if (isLight.y > 0.0f) isLight.y=0.0f;
-		else isLight.y = 3.0f;
-		// cout << glm::to_string(isLight) << endl;
-	}
-
-	if (key == GLFW_KEY_LEFT_ALT && action == GLFW_PRESS)
-	{	
-		int n = 4*800*600;
-		GLubyte pixels[n];// = new GLubyte[n];
-		glReadPixels(0,0,800,600, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
-		int num_bytes_written = 0;
-		unsigned char ustore[n];// = new unsigned char[n];
-		for(unsigned int x=0; x<800; x++)
-			for(unsigned int y=0;y<600; y++)
-			{
-				unsigned int index=0, uindex=0;
-				index=(4*800*y) + (4*x);
-				uindex=(4*800*(600-y)) + (4*x);
-				ustore[uindex] = (unsigned char)(pixels[index]);
-				ustore[uindex+1]=(unsigned char)(pixels[index+1]);
-				ustore[uindex+2]=(unsigned char)(pixels[index+2]);
-				ustore[uindex+3]=(unsigned char)(pixels[index+3]);
-			}
-
-		time_t tt;
-	    // Applying time() 
-	    time (&tt); 
-	    // Using localtime() 
-	    tm TM  = *localtime(&tt);
-	    int year    = TM.tm_year + 1900;
-		int month   = TM.tm_mon ;
-		int day     = TM.tm_mday;
-		int hour    = TM.tm_hour;
-		int mins    = TM.tm_min ;
-		int secs    = TM.tm_sec ;
-
-		string temp = "screenshot/"+to_string(year)+to_string(month+1)+to_string(day)+to_string(hour)+to_string(mins)+to_string(secs)+".jpg";
-		num_bytes_written = stbi_write_jpg( temp.c_str(), 800, 600, 4, (void*)ustore, 90);
-	    
-	    // cout << to_string(year)+to_string(month+1)+to_string(day)+to_string(hour)+to_string(mins)+to_string(secs)+".jpg" << endl;
-	}
-	if (action == GLFW_PRESS)
-		keys[key]=true;
-	else if (action == GLFW_RELEASE)
-		keys[key]=false;
-}
 
 void drawCube()
 {
@@ -286,47 +168,49 @@ void renderLine()
 	glBindVertexArray(0);
 }
 
-void drawPoints()
-{
-	for (int i = 0; i < pathlist.size(); ++i)
-	{
-		renderCube(glm::vec3(pathlist[i].x,pathlist[i].y,pathlist[i].z));
-	}
-	if (pathlist.size()==4)
-	{
-		int pointCount = 0;
-		GLfloat vertices1[12];
-		while (pointCount < pathlist.size())
-		{
-			int count = 0;
-			for (int j = 0; j < 12; j++)
-			{
-				vertices1[j++] = (pathlist[pointCount].x);
-				vertices1[j++] = (pathlist[pointCount].y);
-				vertices1[j] = (pathlist[pointCount].z);
-				pointCount++;
-			}
-			for (float a = 0; a < 1.0f; a += (0.01f)) {
-				data[count++] = (1 - a)*(1 - a)*(1 - a)*vertices1[0] + 3 * a*(1 - a)*(1 - a)*vertices1[3] + 3 * a*a*(1 - a)*vertices1[6] + a * a*a*vertices1[9];
-				data[count++] = (1 - a)*(1 - a)*(1 - a)*vertices1[1] + 3 * a*(1 - a)*(1 - a)*vertices1[4] + 3 * a*a*(1 - a)*vertices1[7] + a * a*a*vertices1[10];
-				data[count++] = (1 - a)*(1 - a)*(1 - a)*vertices1[2] + 3 * a*(1 - a)*(1 - a)*vertices1[5] + 3 * a*a*(1 - a)*vertices1[8] + a * a*a*vertices1[11];	
-			}
-			glGenBuffers(1, &lineVBO);
-			glGenVertexArrays(1, &lineVAO);
-			glBindVertexArray(lineVAO);
-			glBindBuffer(GL_ARRAY_BUFFER, lineVBO);
-			glBufferData(GL_ARRAY_BUFFER, sizeof(data), data, GL_STATIC_DRAW);
-			glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
-			glEnableVertexAttribArray(0);
-			glBindBuffer(GL_ARRAY_BUFFER, 0);
-			glBindVertexArray(0);
-		}
-		renderLine();
-	}
-}
+// void drawPoints()
+// {
+// 	for (int i = 0; i < pathlist.size(); ++i)
+// 	{
+// 		renderCube(glm::vec3(pathlist[i].x,pathlist[i].y,pathlist[i].z));
+// 	}
+// 	if (pathlist.size()==4)
+// 	{
+// 		int pointCount = 0;
+// 		GLfloat vertices1[12];
+// 		while (pointCount < pathlist.size())
+// 		{
+// 			int count = 0;
+// 			for (int j = 0; j < 12; j++)
+// 			{
+// 				vertices1[j++] = (pathlist[pointCount].x);
+// 				vertices1[j++] = (pathlist[pointCount].y);
+// 				vertices1[j] = (pathlist[pointCount].z);
+// 				pointCount++;
+// 			}
+// 			for (float a = 0; a < 1.0f; a += (0.01f)) {
+// 				data[count++] = (1 - a)*(1 - a)*(1 - a)*vertices1[0] + 3 * a*(1 - a)*(1 - a)*vertices1[3] + 3 * a*a*(1 - a)*vertices1[6] + a * a*a*vertices1[9];
+// 				data[count++] = (1 - a)*(1 - a)*(1 - a)*vertices1[1] + 3 * a*(1 - a)*(1 - a)*vertices1[4] + 3 * a*a*(1 - a)*vertices1[7] + a * a*a*vertices1[10];
+// 				data[count++] = (1 - a)*(1 - a)*(1 - a)*vertices1[2] + 3 * a*(1 - a)*(1 - a)*vertices1[5] + 3 * a*a*(1 - a)*vertices1[8] + a * a*a*vertices1[11];	
+// 			}
+// 			glGenBuffers(1, &lineVBO);
+// 			glGenVertexArrays(1, &lineVAO);
+// 			glBindVertexArray(lineVAO);
+// 			glBindBuffer(GL_ARRAY_BUFFER, lineVBO);
+// 			glBufferData(GL_ARRAY_BUFFER, sizeof(data), data, GL_STATIC_DRAW);
+// 			glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
+// 			glEnableVertexAttribArray(0);
+// 			glBindBuffer(GL_ARRAY_BUFFER, 0);
+// 			glBindVertexArray(0);
+// 		}
+// 		renderLine();
+// 	}
+// }
 
 
-
+/**
+ * handles mouse click
+ */
 void mousebutton_callback(GLFWwindow* window, int button, int action, int mods) {
 	    if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS ) {
         double xpos, ypos;
@@ -354,40 +238,19 @@ void mousebutton_callback(GLFWwindow* window, int button, int action, int mods) 
 	// camera.ProcessMouseMovement(xoffset, yoffset);	
 }
 
+
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
 	camera.ProcessMouseScroll(yoffset);
 }
 
-void doMovement() {
-	// Camera controls
-	if (keys[GLFW_KEY_W])
-		camera.ProcessKeyboard(FORWARD, deltaTime);
-	if (keys[GLFW_KEY_S])
-		camera.ProcessKeyboard(BACKWARD, deltaTime);
-	if (keys[GLFW_KEY_A])
-		camera.ProcessKeyboard(LEFT, deltaTime);
-	if (keys[GLFW_KEY_D])
-		camera.ProcessKeyboard(RIGHT, deltaTime);
-	if (keys[GLFW_KEY_Z]) 
-		camera.ProcessKeyboard(UP, deltaTime);
-	if (keys[GLFW_KEY_X]) 
-		camera.ProcessKeyboard(DOWN, deltaTime);
-	if (keys[GLFW_KEY_Q])  // rotate anti
-		camera.ProcessKeyboard(CLOCK, deltaTime);
-	if (keys[GLFW_KEY_E])  // rotate anti
-		camera.ProcessKeyboard(ANTI, deltaTime);
-}
-
-
 void initCallBacks(ContextManager* cm)
 {
 	GLFWwindow* window = cm->getContext();
-	glfwSetKeyCallback(window, key_callback);
 	// glfwSetCursorPosCallback(window, mouse_callback);
-	glfwSetScrollCallback(window, scroll_callback);
-	glfwSetMouseButtonCallback(window, mousebutton_callback);
+	// glfwSetScrollCallback(window, scroll_callback);
+	// glfwSetMouseButtonCallback(window, mousebutton_callback);
 
-	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	// glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 }
 
 
@@ -403,6 +266,8 @@ int main()
 
 	printGraphicsDetails();
 	glViewport(0, 0, cm.getWidth(), cm.getHeight());
+
+	InputDeviceManager idm(&cm, &camera);
 
 	// setup opengl options
 	glEnable(GL_DEPTH_TEST);
@@ -575,12 +440,9 @@ int main()
 	// drawCube();
 
 	while (!glfwWindowShouldClose(cm.getContext())) {
-		GLfloat currentFrame = glfwGetTime();
-		deltaTime = currentFrame - lastFrame;
-		lastFrame = currentFrame;
 		
 		glfwPollEvents();
-		doMovement();
+		idm.updateCameraPosition();
 
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -681,20 +543,20 @@ int main()
 		house->createHouse(glm::vec3(0.0f), shaderProgram.Program);
 		count++;
 		count1++;
-		if (count1%2==0 && pathlist.size()==4 && isBeizer) 
-		{
-			count1=0;
-			camera.setFront(-glm::vec3(camera.getPosition().x+(2.25*house->length - house->thickness) / 2.0, 
-				camera.getPosition().y+house->height/8.0f-house->thickness*7.0f, 
-				camera.getPosition().z+6*house->breadth/8.0f));
-			camera.setPosition(glm::vec3(data[3*count2], data[3*count2+1], data[3*count2+2]));
-			count2++;
-			if(count2%100==0)
-			{
-				count2=0;
-				isBeizer=GL_FALSE;
-			}
-		}
+		// if (count1%2==0 && pathlist.size()==4 && isBeizer) 
+		// {
+		// 	count1=0;
+		// 	camera.setFront(-glm::vec3(camera.getPosition().x+(2.25*house->length - house->thickness) / 2.0, 
+		// 		camera.getPosition().y+house->height/8.0f-house->thickness*7.0f, 
+		// 		camera.getPosition().z+6*house->breadth/8.0f));
+		// 	camera.setPosition(glm::vec3(data[3*count2], data[3*count2+1], data[3*count2+2]));
+		// 	count2++;
+		// 	if(count2%100==0)
+		// 	{
+		// 		count2=0;
+		// 		isBeizer=GL_FALSE;
+		// 	}
+		// }
 		// if (count == 5) 
 		// {
 		// 	count = 0;
@@ -702,11 +564,11 @@ int main()
 		// 	if (human->isDone) human->rotCen();
 		// }
 
-		pointShader.Use();
-		if (pathlist.size()) 
-		{
-			drawPoints();
-		}
+		// pointShader.Use();
+		// if (pathlist.size()) 
+		// {
+		// 	drawPoints();
+		// }
 
 		glfwSwapBuffers(cm.getContext());
 	}

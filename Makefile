@@ -9,8 +9,8 @@ CPPFLAGS=-g -std=c++0x -I/usr/local/include -I./irrKlang/include -I./
 IRRKLANGPARAMS=./libIrrKlang.so ./ikpMP3.so
 
 BIN=bin/application
-SRCS_FILES=House.cpp Shader.cpp texture.cpp Mbox.cpp Humanoid.cpp Main.cpp Context.cpp Camera.cpp
-INCLUDES_FILES=House.h Shader.h texture.hpp Mbox.h Humanoid.h Context.h Camera.h
+SRCS_FILES=House.cpp Shader.cpp texture.cpp Mbox.cpp Humanoid.cpp Main.cpp Context.cpp Camera.cpp inputdevice.cpp
+INCLUDES_FILES=House.h Shader.h texture.hpp Mbox.h Humanoid.h Context.h Camera.h inputdevice.h
 
 INCLUDES = $(addprefix include/,$(INCLUDES_FILES))
 SRCS	 = $(addprefix src/,$(SRCS_FILES))
