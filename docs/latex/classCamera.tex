@@ -1,0 +1,90 @@
+\hypertarget{classCamera}{}\doxysection{Camera Class Reference}
+\label{classCamera}\index{Camera@{Camera}}
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCamera_ad424b8b92e580508caf21337b69b93fa}{update\+Camera\+Vectors}} ()
+\item 
+\mbox{\hyperlink{classCamera_a535f3a2413a88c2f1e7d1147bec0039c}{Camera}} (glm\+::vec3 position=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::vec3 up=glm\+::vec3(0.\+0f, 1.\+0f, 0.\+0f), G\+Lfloat yaw=Y\+AW, G\+Lfloat pitch=P\+I\+T\+CH)
+\item 
+\mbox{\hyperlink{classCamera_a1efd973829c22d5fe15a26ede3357ee5}{Camera}} (G\+Lfloat posX, G\+Lfloat posY, G\+Lfloat posZ, G\+Lfloat upX, G\+Lfloat upY, G\+Lfloat upZ, G\+Lfloat yaw, G\+Lfloat pitch)
+\item 
+\mbox{\Hypertarget{classCamera_affa333055635aed96518c4c66be9a70c}\label{classCamera_affa333055635aed96518c4c66be9a70c}} 
+glm\+::mat4 {\bfseries Get\+View\+Matrix} ()
+\item 
+void \mbox{\hyperlink{classCamera_a18d79d4f3c43dcd09570a65dbab3a2d5}{Process\+Keyboard}} (Camera\+\_\+\+Movement direction, G\+Lfloat delta\+Time, G\+Lboolean constrain\+Pitch=true)
+\item 
+void \mbox{\hyperlink{classCamera_a97ffbf8d8935fc63bd2ca71a4268eec4}{Process\+Mouse\+Movement}} (G\+Lfloat xoffset, G\+Lfloat yoffset, G\+Lboolean constrain\+Pitch=true)
+\item 
+void \mbox{\hyperlink{classCamera_af269e5ef38e791afb7f4a1dfb8da2399}{Process\+Mouse\+Scroll}} (G\+Lfloat yoffset)
+\item 
+\mbox{\Hypertarget{classCamera_a3c1bdb6971c9f6afcafd5b617d234dc8}\label{classCamera_a3c1bdb6971c9f6afcafd5b617d234dc8}} 
+G\+Lfloat {\bfseries get\+Zoom} ()
+\item 
+\mbox{\Hypertarget{classCamera_a520c5a7413b3e704f2f442288db17bcf}\label{classCamera_a520c5a7413b3e704f2f442288db17bcf}} 
+glm\+::vec3 {\bfseries get\+Position} ()
+\item 
+\mbox{\Hypertarget{classCamera_a1871dd02a5cf9d43c5151ee0be4f778e}\label{classCamera_a1871dd02a5cf9d43c5151ee0be4f778e}} 
+void {\bfseries set\+Position} (glm\+::vec3 Position)
+\item 
+\mbox{\Hypertarget{classCamera_a7882938d6b9b112e81cf58d14ea7410d}\label{classCamera_a7882938d6b9b112e81cf58d14ea7410d}} 
+glm\+::vec3 {\bfseries get\+Front} ()
+\item 
+\mbox{\Hypertarget{classCamera_a08cd42e587e0af93e78cebb2cf032989}\label{classCamera_a08cd42e587e0af93e78cebb2cf032989}} 
+void {\bfseries set\+Front} (glm\+::vec3 front)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstract camera class that processes input and calculates the corresponding Eular Angles, Vectors and Matrices for use in Open\+GL 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCamera_a535f3a2413a88c2f1e7d1147bec0039c}\label{classCamera_a535f3a2413a88c2f1e7d1147bec0039c}} 
+\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{position = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)},  }\item[{glm\+::vec3}]{up = {\ttfamily glm\+:\+:vec3(0.0f,~1.0f,~0.0f)},  }\item[{G\+Lfloat}]{yaw = {\ttfamily YAW},  }\item[{G\+Lfloat}]{pitch = {\ttfamily PITCH} }\end{DoxyParamCaption})}
+
+Constructor with vectors \mbox{\Hypertarget{classCamera_a1efd973829c22d5fe15a26ede3357ee5}\label{classCamera_a1efd973829c22d5fe15a26ede3357ee5}} 
+\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{G\+Lfloat}]{posX,  }\item[{G\+Lfloat}]{posY,  }\item[{G\+Lfloat}]{posZ,  }\item[{G\+Lfloat}]{upX,  }\item[{G\+Lfloat}]{upY,  }\item[{G\+Lfloat}]{upZ,  }\item[{G\+Lfloat}]{yaw,  }\item[{G\+Lfloat}]{pitch }\end{DoxyParamCaption})}
+
+Constructor with scalar values 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCamera_a18d79d4f3c43dcd09570a65dbab3a2d5}\label{classCamera_a18d79d4f3c43dcd09570a65dbab3a2d5}} 
+\index{Camera@{Camera}!ProcessKeyboard@{ProcessKeyboard}}
+\index{ProcessKeyboard@{ProcessKeyboard}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{ProcessKeyboard()}{ProcessKeyboard()}}
+{\footnotesize\ttfamily void Camera\+::\+Process\+Keyboard (\begin{DoxyParamCaption}\item[{Camera\+\_\+\+Movement}]{direction,  }\item[{G\+Lfloat}]{delta\+Time,  }\item[{G\+Lboolean}]{constrain\+Pitch = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Processes input received from any keyboard-\/like input system. Accepts input parameter in the form of camera defined E\+N\+UM (to abstract it from windowing systems) \mbox{\Hypertarget{classCamera_a97ffbf8d8935fc63bd2ca71a4268eec4}\label{classCamera_a97ffbf8d8935fc63bd2ca71a4268eec4}} 
+\index{Camera@{Camera}!ProcessMouseMovement@{ProcessMouseMovement}}
+\index{ProcessMouseMovement@{ProcessMouseMovement}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{ProcessMouseMovement()}{ProcessMouseMovement()}}
+{\footnotesize\ttfamily void Camera\+::\+Process\+Mouse\+Movement (\begin{DoxyParamCaption}\item[{G\+Lfloat}]{xoffset,  }\item[{G\+Lfloat}]{yoffset,  }\item[{G\+Lboolean}]{constrain\+Pitch = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Processes input received from a mouse input system. Expects the offset value in both the x and y direction. \mbox{\Hypertarget{classCamera_af269e5ef38e791afb7f4a1dfb8da2399}\label{classCamera_af269e5ef38e791afb7f4a1dfb8da2399}} 
+\index{Camera@{Camera}!ProcessMouseScroll@{ProcessMouseScroll}}
+\index{ProcessMouseScroll@{ProcessMouseScroll}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{ProcessMouseScroll()}{ProcessMouseScroll()}}
+{\footnotesize\ttfamily void Camera\+::\+Process\+Mouse\+Scroll (\begin{DoxyParamCaption}\item[{G\+Lfloat}]{yoffset }\end{DoxyParamCaption})}
+
+Processes input received from a mouse scroll-\/wheel event. Only requires input on the vertical wheel-\/axis \mbox{\Hypertarget{classCamera_ad424b8b92e580508caf21337b69b93fa}\label{classCamera_ad424b8b92e580508caf21337b69b93fa}} 
+\index{Camera@{Camera}!updateCameraVectors@{updateCameraVectors}}
+\index{updateCameraVectors@{updateCameraVectors}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{updateCameraVectors()}{updateCameraVectors()}}
+{\footnotesize\ttfamily void Camera\+::update\+Camera\+Vectors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Calculates the front vector from the \mbox{\hyperlink{classCamera}{Camera}}\textquotesingle{}s (updated) Eular Angles 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Camera.\+h\item 
+src/Camera.\+cpp\end{DoxyCompactItemize}
