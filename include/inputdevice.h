@@ -5,12 +5,16 @@
 #include <GLFW/glfw3.h>
 #include "Camera.h"
 #include "Context.h"
+#include<iostream>
 
 class InputDeviceManager
 {
     private:
         static GLboolean keys[1024];
-        Camera* camera;
+        static Camera* camera;
+        static GLfloat lastX, lastY;
+        static GLboolean firstMouse;
+
         /**
          * last frame time
          */
@@ -25,6 +29,16 @@ class InputDeviceManager
          * keyboard mapping
          */
         static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
+
+        /**
+         * mouse scroll
+         */
+        static void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
+
+        /**
+         * handles mouse click
+         */
+        static void mousePosCallback(GLFWwindow* window, double xpos, double ypos);
 
     public:
         InputDeviceManager(ContextManager* cm, Camera* camera);

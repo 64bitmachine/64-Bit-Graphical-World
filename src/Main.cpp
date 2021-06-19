@@ -207,47 +207,10 @@ void renderLine()
 // 	}
 // }
 
-
-/**
- * handles mouse click
- */
-void mousebutton_callback(GLFWwindow* window, int button, int action, int mods) {
-	    if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS ) {
-        double xpos, ypos;
-        glfwGetCursorPos(window, &xpos, &ypos);
-        float x,y,z;
-        // x = float((xpos / cm->getWidth()) * 2 - 1);
-        // y = float(1 - (ypos / cm->getHeight()) * 2);
-        glReadPixels(xpos, ypos, 1, 1, GL_DEPTH_COMPONENT, GL_FLOAT, &z);
-        glm::mat4 inv_projection = glm::inverse(projection*view);
-        //glm::mat4 inv_view = glm::inverse(camera.GetViewMatrix());
-
-        // glm::vec4 pr = inv_projection*glm::vec4(x,y,-z,1.0f);
-        // pr = pr/pr.w;
-        // glm::vec4 pr1 = inv_projection*glm::vec4(x,y,z,1.0f);
-        // pr1 = pr1/pr1.w;
-        // cout << glm::to_string(pr) << endl;
-        // cout << glm::to_string(pr1) << endl;
-        // pr = pr+30*glm::normalize(pr1-pr);
-       // glm::vec4 pos = inv_view*pr;
-        
-        // cout << x << " " << y << " " << z << "\n";
-        // cout << glm::to_string(pr) << endl;
-        // pathlist.push_back(glm::vec3(pr.x,pr.y,pr.z));
-    }
-	// camera.ProcessMouseMovement(xoffset, yoffset);	
-}
-
-
-void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
-	camera.ProcessMouseScroll(yoffset);
-}
-
 void initCallBacks(ContextManager* cm)
 {
 	GLFWwindow* window = cm->getContext();
-	// glfwSetCursorPosCallback(window, mouse_callback);
-	// glfwSetScrollCallback(window, scroll_callback);
+	
 	// glfwSetMouseButtonCallback(window, mousebutton_callback);
 
 	// glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);

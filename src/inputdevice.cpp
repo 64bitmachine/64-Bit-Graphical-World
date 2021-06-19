@@ -1,10 +1,21 @@
 #include "include/inputdevice.h"
 
 GLboolean InputDeviceManager::keys[1024];
+Camera* InputDeviceManager::camera;
+GLfloat InputDeviceManager::lastX;
+GLfloat InputDeviceManager::lastY;
+GLboolean InputDeviceManager::firstMouse = true;
 
-InputDeviceManager::InputDeviceManager(ContextManager* cm, Camera* camera):camera(camera)
+InputDeviceManager::InputDeviceManager(ContextManager* cm, Camera* camera)
 {
+	this->camera = camera;
     glfwSetKeyCallback(cm->getContext(), key_callback);
+	glfwSetScrollCallback(cm->getContext(), scroll_callback);
+	glfwSetCursorPosCallback(cm->getContext(), mousePosCallback);
+	glfwSetInputMode(cm->getContext(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
+	lastX = cm->getWidth() / 2.0;
+	lastY = cm->getHeight() / 2.0;
 }
 
 InputDeviceManager::~InputDeviceManager()
@@ -163,4 +174,24 @@ void InputDeviceManager::key_callback(GLFWwindow* window, int key, int scancode,
 		keys[key]=true;
 	else if (action == GLFW_RELEASE)
 		keys[key]=false;
+}
+
+void InputDeviceManager::scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
+{
+	camera->ProcessMouseScroll(yoffset);
+}
+
+void InputDeviceManager::mousePosCallback(GLFWwindow* window, double xpos, double ypos) {
+	if (firstMouse)
+	{
+		lastX = xpos;
+		lastY = ypos;
+		firstMouse = false;
+	}
+
+	camera->ProcessMouseMovement(xpos - lastX, lastY - ypos);
+
+
+	lastX = xpos;
+	lastY = ypos;
 }
