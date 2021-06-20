@@ -47,7 +47,7 @@ Keys binding:
     k 	-	save keyframe
     esc	-	close the program
 
-Video pewview : https://youtu.be/rVoDl_9Dk74
+Video preview : https://youtu.be/rVoDl_9Dk74
 
 Reference:
 

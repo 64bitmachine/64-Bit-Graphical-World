@@ -19,6 +19,7 @@ all: $(BIN)
 
 $(BIN): $(SRCS) $(INCLUDES)
 	g++ $(CPPFLAGS) $(SRCS) -o $(BIN) $(LDFLAGS) $(LIBS) $(IRRKLANGPARAMS) $(PTHREAD)
+	doxygen config/doc
 
 #$(BIN):
 #	g++ $(CPPFLAGS) Main.cpp -o main.out $(LDFLAGS) $(LIBS)
