@@ -2,6 +2,10 @@
 \label{classHumanoid}\index{Humanoid@{Humanoid}}
 
 
+{\ttfamily \#include $<$Humanoid.\+h$>$}
+
+
+
 Collaboration diagram for Humanoid\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -12,14 +16,12 @@ Collaboration diagram for Humanoid\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classHumanoid_a256342af0c190d2c06485833de40ff22}\label{classHumanoid_a256342af0c190d2c06485833de40ff22}} 
-{\bfseries Humanoid} (glm\+::vec3 center, G\+Lint Shader\+Program)
+\mbox{\Hypertarget{classHumanoid_a66e13365634ded1aeaa20ed1fc3aedca}\label{classHumanoid_a66e13365634ded1aeaa20ed1fc3aedca}} 
+{\bfseries Humanoid} (glm\+::vec3 center, G\+Lint Shader\+Program, char gender)
 \item 
-\mbox{\Hypertarget{classHumanoid_aa4448d7624d5a7a7a76e8d3d95b735cf}\label{classHumanoid_aa4448d7624d5a7a7a76e8d3d95b735cf}} 
-void {\bfseries add\+Body\+Part} (\mbox{\hyperlink{classBodyParts}{Body\+Parts}} $\ast$part, glm\+::vec3 Offset)
+void \mbox{\hyperlink{classHumanoid_aa4448d7624d5a7a7a76e8d3d95b735cf}{add\+Body\+Part}} (\mbox{\hyperlink{classBodyParts}{Body\+Parts}} $\ast$part, glm\+::vec3 Offset)
 \item 
-\mbox{\Hypertarget{classHumanoid_aef21bc7fa1437abb9e276ad88b27aa71}\label{classHumanoid_aef21bc7fa1437abb9e276ad88b27aa71}} 
-void {\bfseries display\+Humanoid} ()
+void \mbox{\hyperlink{classHumanoid_aa1b1d42e78c1fb79cdbd92b91d73eec1}{visible}} ()
 \item 
 \mbox{\Hypertarget{classHumanoid_a4e162f1a9906c2e6f1149e61a4faf3e4}\label{classHumanoid_a4e162f1a9906c2e6f1149e61a4faf3e4}} 
 void {\bfseries rot\+Cen} ()
@@ -36,10 +38,28 @@ G\+Lfloat {\bfseries count} = 0.\+0f
 \mbox{\Hypertarget{classHumanoid_ad7071b2d30275ee7c2edec1a15de966d}\label{classHumanoid_ad7071b2d30275ee7c2edec1a15de966d}} 
 G\+Lint {\bfseries is\+Done} = 0
 \item 
-\mbox{\Hypertarget{classHumanoid_a8432d5e7507ba053e0e698b89e166585}\label{classHumanoid_a8432d5e7507ba053e0e698b89e166585}} 
-G\+Lboolean {\bfseries isshift} = G\+L\+\_\+\+F\+A\+L\+SE
+\mbox{\Hypertarget{classHumanoid_a56a2a25e3a5fe16e5637efae8a182bf5}\label{classHumanoid_a56a2a25e3a5fe16e5637efae8a182bf5}} 
+G\+Lboolean {\bfseries is\+Shift} = G\+L\+\_\+\+F\+A\+L\+SE
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Graphical human body 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHumanoid_aa4448d7624d5a7a7a76e8d3d95b735cf}\label{classHumanoid_aa4448d7624d5a7a7a76e8d3d95b735cf}} 
+\index{Humanoid@{Humanoid}!addBodyPart@{addBodyPart}}
+\index{addBodyPart@{addBodyPart}!Humanoid@{Humanoid}}
+\doxysubsubsection{\texorpdfstring{addBodyPart()}{addBodyPart()}}
+{\footnotesize\ttfamily void Humanoid\+::add\+Body\+Part (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBodyParts}{Body\+Parts}} $\ast$}]{part,  }\item[{glm\+::vec3}]{Offset }\end{DoxyParamCaption})}
+
+adds body parts \mbox{\Hypertarget{classHumanoid_aa1b1d42e78c1fb79cdbd92b91d73eec1}\label{classHumanoid_aa1b1d42e78c1fb79cdbd92b91d73eec1}} 
+\index{Humanoid@{Humanoid}!visible@{visible}}
+\index{visible@{visible}!Humanoid@{Humanoid}}
+\doxysubsubsection{\texorpdfstring{visible()}{visible()}}
+{\footnotesize\ttfamily void Humanoid\+::visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Displays the human 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

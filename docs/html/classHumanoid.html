@@ -69,6 +69,8 @@ $(function() {
 <div class="title">Humanoid Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="Humanoid_8h_source.html">Humanoid.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Humanoid:</div>
 <div class="dyncontent">
@@ -82,15 +84,13 @@ Collaboration diagram for Humanoid:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a256342af0c190d2c06485833de40ff22"><td class="memItemLeft" align="right" valign="top"><a id="a256342af0c190d2c06485833de40ff22"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Humanoid</b> (glm::vec3 center, GLint ShaderProgram)</td></tr>
-<tr class="separator:a256342af0c190d2c06485833de40ff22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4448d7624d5a7a7a76e8d3d95b735cf"><td class="memItemLeft" align="right" valign="top"><a id="aa4448d7624d5a7a7a76e8d3d95b735cf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addBodyPart</b> (<a class="el" href="classBodyParts.html">BodyParts</a> *part, glm::vec3 Offset)</td></tr>
+<tr class="memitem:a66e13365634ded1aeaa20ed1fc3aedca"><td class="memItemLeft" align="right" valign="top"><a id="a66e13365634ded1aeaa20ed1fc3aedca"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Humanoid</b> (glm::vec3 center, GLint ShaderProgram, char gender)</td></tr>
+<tr class="separator:a66e13365634ded1aeaa20ed1fc3aedca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4448d7624d5a7a7a76e8d3d95b735cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanoid.html#aa4448d7624d5a7a7a76e8d3d95b735cf">addBodyPart</a> (<a class="el" href="classBodyParts.html">BodyParts</a> *part, glm::vec3 Offset)</td></tr>
 <tr class="separator:aa4448d7624d5a7a7a76e8d3d95b735cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef21bc7fa1437abb9e276ad88b27aa71"><td class="memItemLeft" align="right" valign="top"><a id="aef21bc7fa1437abb9e276ad88b27aa71"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>displayHumanoid</b> ()</td></tr>
-<tr class="separator:aef21bc7fa1437abb9e276ad88b27aa71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1b1d42e78c1fb79cdbd92b91d73eec1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanoid.html#aa1b1d42e78c1fb79cdbd92b91d73eec1">visible</a> ()</td></tr>
+<tr class="separator:aa1b1d42e78c1fb79cdbd92b91d73eec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e162f1a9906c2e6f1149e61a4faf3e4"><td class="memItemLeft" align="right" valign="top"><a id="a4e162f1a9906c2e6f1149e61a4faf3e4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>rotCen</b> ()</td></tr>
 <tr class="separator:a4e162f1a9906c2e6f1149e61a4faf3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -106,10 +106,60 @@ GLfloat&#160;</td><td class="memItemRight" valign="bottom"><b>count</b> = 0.0f</
 <tr class="memitem:ad7071b2d30275ee7c2edec1a15de966d"><td class="memItemLeft" align="right" valign="top"><a id="ad7071b2d30275ee7c2edec1a15de966d"></a>
 GLint&#160;</td><td class="memItemRight" valign="bottom"><b>isDone</b> = 0</td></tr>
 <tr class="separator:ad7071b2d30275ee7c2edec1a15de966d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8432d5e7507ba053e0e698b89e166585"><td class="memItemLeft" align="right" valign="top"><a id="a8432d5e7507ba053e0e698b89e166585"></a>
-GLboolean&#160;</td><td class="memItemRight" valign="bottom"><b>isshift</b> = GL_FALSE</td></tr>
-<tr class="separator:a8432d5e7507ba053e0e698b89e166585"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56a2a25e3a5fe16e5637efae8a182bf5"><td class="memItemLeft" align="right" valign="top"><a id="a56a2a25e3a5fe16e5637efae8a182bf5"></a>
+GLboolean&#160;</td><td class="memItemRight" valign="bottom"><b>isShift</b> = GL_FALSE</td></tr>
+<tr class="separator:a56a2a25e3a5fe16e5637efae8a182bf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Graphical human body </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa4448d7624d5a7a7a76e8d3d95b735cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4448d7624d5a7a7a76e8d3d95b735cf">&#9670;&nbsp;</a></span>addBodyPart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Humanoid::addBodyPart </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classBodyParts.html">BodyParts</a> *&#160;</td>
+          <td class="paramname"><em>part</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">glm::vec3&#160;</td>
+          <td class="paramname"><em>Offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>adds body parts </p>
+
+</div>
+</div>
+<a id="aa1b1d42e78c1fb79cdbd92b91d73eec1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1b1d42e78c1fb79cdbd92b91d73eec1">&#9670;&nbsp;</a></span>visible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Humanoid::visible </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Displays the human </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="Humanoid_8h_source.html">Humanoid.h</a></li>
 <li>src/Humanoid.cpp</li>

@@ -2,6 +2,10 @@
 \label{classBodyParts}\index{BodyParts@{BodyParts}}
 
 
+{\ttfamily \#include $<$Humanoid.\+h$>$}
+
+
+
 Collaboration diagram for Body\+Parts\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -12,8 +16,8 @@ Collaboration diagram for Body\+Parts\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classBodyParts_a5f337b4c5e8a262a157eada1e0a2886b}\label{classBodyParts_a5f337b4c5e8a262a157eada1e0a2886b}} 
-{\bfseries Body\+Parts} (G\+Lfloat a, G\+Lfloat b, G\+Lfloat c, glm\+::vec3 Center, G\+Lint d, part\+Name h, G\+Luint k)
+\mbox{\Hypertarget{classBodyParts_a531f3ef3548cd8c77d8434c8f53c58ac}\label{classBodyParts_a531f3ef3548cd8c77d8434c8f53c58ac}} 
+{\bfseries Body\+Parts} (G\+Lfloat a, G\+Lfloat b, G\+Lfloat c, glm\+::vec3 Center, G\+Lint d, Body\+Part h, G\+Luint k)
 \item 
 \mbox{\Hypertarget{classBodyParts_a574f35a53e67de94c9cbb135d319b8e6}\label{classBodyParts_a574f35a53e67de94c9cbb135d319b8e6}} 
 void {\bfseries draw\+Body\+Part} ()
@@ -30,8 +34,8 @@ void {\bfseries swing\+Hand} (G\+Lint a)
 \mbox{\Hypertarget{classBodyParts_a11a45b42006e45ea551400841f1634d9}\label{classBodyParts_a11a45b42006e45ea551400841f1634d9}} 
 \mbox{\hyperlink{structAtom}{Atom}} $\ast$ {\bfseries matter}
 \item 
-\mbox{\Hypertarget{classBodyParts_a52e66e9d114c48009c3c14fd934d8580}\label{classBodyParts_a52e66e9d114c48009c3c14fd934d8580}} 
-part\+Name {\bfseries type}
+\mbox{\Hypertarget{classBodyParts_aabb595fd99466d2c4d49d0e5af6819e0}\label{classBodyParts_aabb595fd99466d2c4d49d0e5af6819e0}} 
+Body\+Part {\bfseries type}
 \item 
 \mbox{\Hypertarget{classBodyParts_a56a6f6576df0ecdef00626787f67457e}\label{classBodyParts_a56a6f6576df0ecdef00626787f67457e}} 
 G\+Luint {\bfseries texture}
@@ -81,13 +85,16 @@ glm\+::vec3 {\bfseries center}
 \mbox{\Hypertarget{classBodyParts_aab071d7efe12c7804175a69c17e5ab6b}\label{classBodyParts_aab071d7efe12c7804175a69c17e5ab6b}} 
 glm\+::vec3 {\bfseries center1}
 \item 
-\mbox{\Hypertarget{classBodyParts_aaac9d9b4abb5571a741b1613f7704447}\label{classBodyParts_aaac9d9b4abb5571a741b1613f7704447}} 
+\mbox{\Hypertarget{classBodyParts_a38480caf177adcb63006253bc40ba67a}\label{classBodyParts_a38480caf177adcb63006253bc40ba67a}} 
 std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{classBodyParts}{Body\+Parts}} $\ast$, glm\+::vec3 $>$ $>$ {\bfseries children}
 \item 
 \mbox{\Hypertarget{classBodyParts_ae96a40cbf5d0c6a4e556fe0b1754788c}\label{classBodyParts_ae96a40cbf5d0c6a4e556fe0b1754788c}} 
 G\+Lint {\bfseries Shader\+Program}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Graphical Body part 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

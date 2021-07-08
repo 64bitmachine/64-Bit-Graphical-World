@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mbox_11',['Mbox',['../classMbox.html',1,'']]]
+  ['mbox_12',['Mbox',['../classMbox.html',1,'']]]
 ];

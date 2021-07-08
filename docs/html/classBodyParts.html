@@ -69,6 +69,8 @@ $(function() {
 <div class="title">BodyParts Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="Humanoid_8h_source.html">Humanoid.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for BodyParts:</div>
 <div class="dyncontent">
@@ -81,9 +83,9 @@ Collaboration diagram for BodyParts:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5f337b4c5e8a262a157eada1e0a2886b"><td class="memItemLeft" align="right" valign="top"><a id="a5f337b4c5e8a262a157eada1e0a2886b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>BodyParts</b> (GLfloat a, GLfloat b, GLfloat c, glm::vec3 Center, GLint d, partName h, GLuint k)</td></tr>
-<tr class="separator:a5f337b4c5e8a262a157eada1e0a2886b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a531f3ef3548cd8c77d8434c8f53c58ac"><td class="memItemLeft" align="right" valign="top"><a id="a531f3ef3548cd8c77d8434c8f53c58ac"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>BodyParts</b> (GLfloat a, GLfloat b, GLfloat c, glm::vec3 Center, GLint d, BodyPart h, GLuint k)</td></tr>
+<tr class="separator:a531f3ef3548cd8c77d8434c8f53c58ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a574f35a53e67de94c9cbb135d319b8e6"><td class="memItemLeft" align="right" valign="top"><a id="a574f35a53e67de94c9cbb135d319b8e6"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>drawBodyPart</b> ()</td></tr>
 <tr class="separator:a574f35a53e67de94c9cbb135d319b8e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -99,9 +101,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a11a45b42006e45ea551400841f1634d9"><td class="memItemLeft" align="right" valign="top"><a id="a11a45b42006e45ea551400841f1634d9"></a>
 <a class="el" href="structAtom.html">Atom</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>matter</b></td></tr>
 <tr class="separator:a11a45b42006e45ea551400841f1634d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52e66e9d114c48009c3c14fd934d8580"><td class="memItemLeft" align="right" valign="top"><a id="a52e66e9d114c48009c3c14fd934d8580"></a>
-partName&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
-<tr class="separator:a52e66e9d114c48009c3c14fd934d8580"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabb595fd99466d2c4d49d0e5af6819e0"><td class="memItemLeft" align="right" valign="top"><a id="aabb595fd99466d2c4d49d0e5af6819e0"></a>
+BodyPart&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<tr class="separator:aabb595fd99466d2c4d49d0e5af6819e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56a6f6576df0ecdef00626787f67457e"><td class="memItemLeft" align="right" valign="top"><a id="a56a6f6576df0ecdef00626787f67457e"></a>
 GLuint&#160;</td><td class="memItemRight" valign="bottom"><b>texture</b></td></tr>
 <tr class="separator:a56a6f6576df0ecdef00626787f67457e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,14 +152,16 @@ glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>center</b></td><
 <tr class="memitem:aab071d7efe12c7804175a69c17e5ab6b"><td class="memItemLeft" align="right" valign="top"><a id="aab071d7efe12c7804175a69c17e5ab6b"></a>
 glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>center1</b></td></tr>
 <tr class="separator:aab071d7efe12c7804175a69c17e5ab6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaac9d9b4abb5571a741b1613f7704447"><td class="memItemLeft" align="right" valign="top"><a id="aaac9d9b4abb5571a741b1613f7704447"></a>
+<tr class="memitem:a38480caf177adcb63006253bc40ba67a"><td class="memItemLeft" align="right" valign="top"><a id="a38480caf177adcb63006253bc40ba67a"></a>
 std::vector&lt; std::pair&lt; <a class="el" href="classBodyParts.html">BodyParts</a> *, glm::vec3 &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>children</b></td></tr>
-<tr class="separator:aaac9d9b4abb5571a741b1613f7704447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a38480caf177adcb63006253bc40ba67a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae96a40cbf5d0c6a4e556fe0b1754788c"><td class="memItemLeft" align="right" valign="top"><a id="ae96a40cbf5d0c6a4e556fe0b1754788c"></a>
 GLint&#160;</td><td class="memItemRight" valign="bottom"><b>ShaderProgram</b></td></tr>
 <tr class="separator:ae96a40cbf5d0c6a4e556fe0b1754788c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Graphical Body part </p>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="Humanoid_8h_source.html">Humanoid.h</a></li>
 <li>src/Humanoid.cpp</li>
 </ul>
