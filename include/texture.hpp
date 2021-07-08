@@ -1,4 +1,3 @@
-// #include "SOIL.h"
 #include <iostream>
 #include <GL/glew.h>
 #include "stb/stb_image.h"

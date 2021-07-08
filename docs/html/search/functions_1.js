@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['getcontext_29',['getContext',['../classContextManager.html#a481082c73cba8b29aa0e6fa905ae6c9c',1,'ContextManager']]],
-  ['getheight_30',['getHeight',['../classContextManager.html#accc3450257ceb63317ae27302fe4d2fe',1,'ContextManager']]],
-  ['getwidth_31',['getWidth',['../classContextManager.html#a1ac8969fb24018085be7fb39655d3f0d',1,'ContextManager']]]
+  ['camera_31',['Camera',['../classCamera.html#a535f3a2413a88c2f1e7d1147bec0039c',1,'Camera::Camera(glm::vec3 position=glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up=glm::vec3(0.0f, 1.0f, 0.0f), GLfloat yaw=YAW, GLfloat pitch=PITCH)'],['../classCamera.html#a1efd973829c22d5fe15a26ede3357ee5',1,'Camera::Camera(GLfloat posX, GLfloat posY, GLfloat posZ, GLfloat upX, GLfloat upY, GLfloat upZ, GLfloat yaw, GLfloat pitch)']]]
 ];

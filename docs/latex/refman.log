@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.6.19)  19 JUN 2021 14:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.6.19)  8 JUL 2021 06:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**refman
+**refman.tex
 (./refman.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14>
@@ -889,14 +889,14 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 Chapter 2.
 (./structAtom.tex
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 3.
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 6
-.
+(Font)              scaled to size 10.79993pt on input line 7.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 1
+0.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 6.
+(Font)              scaled to size 8.99994pt on input line 10.
 )
 (./classBodyParts.tex <./classBodyParts__coll__graph.pdf
 
@@ -906,8 +906,8 @@ n: multiple pdfs with page group included in a single page
 <classBodyParts__coll__graph.pdf, id=208, 150.5625pt x 167.62625pt>
 File: classBodyParts__coll__graph.pdf Graphic file (type pdf)
 <use classBodyParts__coll__graph.pdf>
-Package pdftex.def Info: classBodyParts__coll__graph.pdf  used on input line 9.
-
+Package pdftex.def Info: classBodyParts__coll__graph.pdf  used on input line 13
+.
 (pdftex.def)             Requested size: 150.0pt x 167.01451pt.
  [3]) (./classCamera.tex [4]
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
@@ -917,19 +917,21 @@ LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 50.
  [5]) (./classContextManager.tex [6])
-(./classHouse.tex) (./classHumanoid.tex <./classHumanoid__coll__graph.pdf
+(./classHouse.tex [7]) (./classHumanoid.tex <./classHumanoid__coll__graph.pdf
 
 pdfTeX warning: pdflatex (file ./classHumanoid__coll__graph.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
 >
-<classHumanoid__coll__graph.pdf, id=306, 151.56625pt x 234.8775pt>
+<classHumanoid__coll__graph.pdf, id=316, 151.56625pt x 234.8775pt>
 File: classHumanoid__coll__graph.pdf Graphic file (type pdf)
 <use classHumanoid__coll__graph.pdf>
-Package pdftex.def Info: classHumanoid__coll__graph.pdf  used on input line 9.
-(pdftex.def)             Requested size: 151.0pt x 234.00244pt.
- [7] [8]) (./classInputDeviceManager.tex) (./classMbox.tex [9])
-(./classShader.tex) [10] (./refman.ind [11
+Package pdftex.def Info: classHumanoid__coll__graph.pdf  used on input line 13.
 
+(pdftex.def)             Requested size: 151.0pt x 234.00244pt.
+ [8]) (./classInputDeviceManager.tex [9]) (./classMbox.tex) (./classShader.tex 
+[10]) [11] [12
+
+] (./refman.ind [13
 
 
 
@@ -939,17 +941,27 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
  (./refman.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
-Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 4635428B9B0668D5DC86AE68D442305E;5910.
+
+
+Package rerunfilecheck Warning: File `refman.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `refman.out':
+(rerunfilecheck)             Before: 4635428B9B0668D5DC86AE68D442305E;5910
+(rerunfilecheck)             After:  07F756ED9C30514ACCFEEA0EF509214C;7102.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 16741 strings out of 481239
- 248645 string characters out of 5920377
+ 16755 strings out of 481239
+ 249062 string characters out of 5920377
  526313 words of memory out of 5000000
- 31515 multiletter control sequences out of 15000+600000
+ 31521 multiletter control sequences out of 15000+600000
  579607 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,15n,96p,938b,398s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,15n,96p,942b,398s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
@@ -959,10 +971,10 @@ rier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on refman.pdf (15 pages, 117698 bytes).
+Output written on refman.pdf (17 pages, 119845 bytes).
 PDF statistics:
- 498 PDF objects out of 1000 (max. 8388607)
- 459 compressed objects within 5 object streams
- 162 named destinations out of 1000 (max. 500000)
+ 517 PDF objects out of 1000 (max. 8388607)
+ 476 compressed objects within 5 object streams
+ 170 named destinations out of 1000 (max. 500000)
  251 words of extra memory for PDF output out of 10000 (max. 10000000)
 
